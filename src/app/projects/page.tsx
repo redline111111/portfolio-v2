@@ -15,7 +15,7 @@ import { motion } from 'framer-motion'
 import { TransitionEffect } from '@/components/Transition/TransitionEffect'
 
 export const metadata = {
-    title: 'Projects page',
+    title: 'Project page | Redline',
     description: 'My projects and experience',
 }
 
@@ -104,7 +104,7 @@ const Project:FC<Omit<IFeaturedProject, "stack">> = ({title, type,img,link,summa
     )
 }
 
-const page = () => {
+export default function page(){
   return (
     <>
     <TransitionEffect/>
@@ -176,5 +176,3 @@ const page = () => {
     </>
   )
 }
-
-export default page
