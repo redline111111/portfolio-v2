@@ -1,4 +1,3 @@
-"use client"
 import { Navbar } from '@/components/Navigation/Navbar'
 import './globals.scss'
 import { Montserrat } from 'next/font/google'
