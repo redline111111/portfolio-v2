@@ -3,3 +3,6 @@ export interface ICustomLink {
 	title: string
 	className?: string
 }
+export interface ICustomMobileLink extends ICustomLink {
+	toggle: () => void
+}

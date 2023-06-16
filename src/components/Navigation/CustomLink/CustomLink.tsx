@@ -1,13 +1,13 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { FC } from "react"
-import { ICustomLink } from "./CustomLink.interface"
+import { ICustomLink, ICustomMobileLink } from "./CustomLink.interface"
 import Link from "next/link"
 
 
 
-const CustomLink: FC<ICustomLink> = ({href, title, className=""} )=> {
+export const CustomLink: FC<ICustomLink> = ({href, title, className=""} )=> {
     const currentPage = usePathname();
     return <Link href={href} className={`${className} relative group`}>
         {title}
@@ -17,4 +17,20 @@ const CustomLink: FC<ICustomLink> = ({href, title, className=""} )=> {
     </Link>
 }
 
-export default CustomLink
+export const CustomMobileLink: FC<ICustomMobileLink> = ({href, title, className="", toggle} )=> {
+    const router = useRouter()
+    const currentPage = usePathname();
+
+    const handleClick = () => {
+        toggle()
+        router.push(href)
+    }
+    
+    return <button className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleClick}>
+        {title}
+        <span className={`h-[1px] inline-block bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${currentPage === href ? 'w-full' : 'w-0'} dark:bg-dark`}>
+            &nbsp;
+        </span>
+    </button>
+}
+
