@@ -10,7 +10,7 @@ import { Education } from '@/components/Education/Education'
 import { TransitionEffect } from '@/components/Transition/TransitionEffect'
 
 export const metadata = {
-    title: 'About page',
+    title: 'About page | Redline',
     description: 'Information about me',
 }
 export default function page(){

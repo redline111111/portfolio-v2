@@ -14,10 +14,7 @@ import TravelImg from '/public/images/travel.jpg'
 import { motion } from 'framer-motion'
 import { TransitionEffect } from '@/components/Transition/TransitionEffect'
 
-export const metadata = {
-    title: 'Project page | Redline',
-    description: 'My projects and experience',
-}
+
 
 interface IFeaturedProject{
     type: string, 

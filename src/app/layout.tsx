@@ -3,7 +3,6 @@ import { Navbar } from '@/components/Navigation/Navbar'
 import './globals.scss'
 import { Montserrat } from 'next/font/google'
 import {Footer} from '@/components/Footer/Footer'
-import { AnimatePresence, motion } from 'framer-motion'
 
 const mont = Montserrat({ 
   subsets: ['latin'],
@@ -26,9 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${mont.className} bg-light w-full min-h-screen`}>
         <Navbar/>
-        <AnimatePresence>
-          <motion.div>{children}</motion.div>
-        </AnimatePresence>    
+        {children} 
         <Footer/>
       </body>
     </html>
